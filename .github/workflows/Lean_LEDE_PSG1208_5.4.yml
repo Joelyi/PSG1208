@@ -7,7 +7,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Build Lean_LEDE_PSG1218_5.4
+name: Build Lean_LEDE_PSG1208_5.4
 
 on:
   repository_dispatch:
@@ -17,7 +17,7 @@ on:
     branches:
       - master
     paths:
-      - 'PSG1218.config'
+      - 'PSG1208.config'
 #  schedule:
 #    - cron: 0 19 * * *
   watch:
@@ -27,7 +27,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: PSG1218.config
+  CONFIG_FILE: PSG1208.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   SSH_ACTIONS: false
