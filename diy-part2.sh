@@ -8,11 +8,11 @@
 # Blog: https://p3terx.com
 #============================================================
 
-device_name='PSG1218'
+device_name='PSG1208'
 wifi_name='PHICOMM'
 lan_ip='192.168.2.1'        # Lan Ip地址
 utc_name='Asia\/Shanghai'   # 时区
-
+default_theme='argon'
 
  
 # 修改机器名称
@@ -25,7 +25,7 @@ sed -i "s/192.168.1.1/$lan_ip/g" package/base-files/files/bin/config_generate
 
 # 修改默认主题
 echo "修改默认主题"
-sed -i 's/bootstrap/argon/g' feeds/luci/collections/luci/Makefile
+sed -i "s/bootstrap/$default_theme/g" feeds/luci/modules/luci-base/root/etc/config/luci
 
 # 修改默认时区
 echo "修改时区"
