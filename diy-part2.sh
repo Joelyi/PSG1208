@@ -12,7 +12,7 @@ device_name='PSG1208'
 wifi_name='PHICOMM'
 lan_ip='192.168.2.1'        # Lan Ip地址
 utc_name='Asia\/Shanghai'   # 时区
-#default_theme='argon'
+default_theme='argon'
 
  
 # 修改机器名称
@@ -33,4 +33,4 @@ sed -i "s/OpenWrt/$wifi_name/g" package/kernel/mac80211/files/lib/wifi/mac80211.
 
 # 修改默认主题
 echo "修改默认主题"
-sed -i "s/bootstrap/argon/g" feeds/luci/modules/luci-base/root/etc/config/luci
+sed -i 's/bootstrap/$default_theme/g' feeds/luci/collections/luci/Makefile
