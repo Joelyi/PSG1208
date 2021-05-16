@@ -1,36 +1,24 @@
 #!/bin/bash
-#============================================================
-# https://github.com/P3TERX/Actions-OpenWrt
-# File name: diy-part2.sh
-# Description: OpenWrt DIY script part 2 (After Update feeds)
+#=================================================
+# Description: DIY script
 # Lisence: MIT
 # Author: P3TERX
 # Blog: https://p3terx.com
-#============================================================
-
-device_name='PSG1208'
-wifi_name='PHICOMM'
-lan_ip='192.168.2.1'        # Lan Ip地址
-utc_name='Asia\/Shanghai'   # 时区
-default_theme='argon'
-
- 
+#=================================================
 # 修改机器名称
-echo "设置主机名"
-sed -i "s/OpenWrt/$device_name/g" package/base-files/files/bin/config_generate
+sed -i "s/OpenWrt/PSG1208/g" package/base-files/files/bin/config_generate
 
 # 设置lan ip
-echo "设置lan ip"
-sed -i "s/192.168.1.1/$lan_ip/g" package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 
-# 修改默认时区
-echo "修改时区"
-sed -i "s/'UTC'/'CST-8'\n   set system.@system[-1].zonename='$utc_name'/g" package/base-files/files/bin/config_generate
-     
-# 修改wifi名称
-echo "修改wifi名称"
-sed -i "s/OpenWrt/$wifi_name/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
+# Modify the version number
+# sed -i 's/OpenWrt/Leopard build $(date "+%Y.%m.%d") @ OpenWrt/g' package/default-settings/files/zzz-default-settings
 
-# 修改默认主题
-echo "修改默认主题"
-sed -i 's/bootstrap/$default_theme/g' feeds/luci/collections/luci/Makefile
+# 添加新的主题包
+# git clone https://github.com/Leo-Jo-My/luci-theme-opentomcat.git package/lean/luci-theme-opentomcat
+
+# 去除默认主题
+#sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
+
+# 修改自带默认主题
+sed -i 's/bootstrap/netgear/g' feeds/luci/collections/luci/Makefile
