@@ -1,5 +1,5 @@
 
-# OpenWrt firmware for K1-PSG1218-A
+# OpenWrt firmware for K1-PSG1208
 固件采用GitHub Actions不定时自动云编译斐讯K1-PSG1208。  
 Auto build OpenWrt firmware for K1-PSG1208 via GitHub Actions
 
@@ -13,13 +13,6 @@ https://github.com/Lienol/openwrt-package
 
 .....
 
-
-
-# 最新版下载&Download Latest
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Joelyi/PSG1208?style=for-the-badge&label=Download)](https://github.com/Joelyi/PSG1208/releases/latest)
-
-
-[所有已发布 & All Release](https://github.com/leopardciaw/PSG1208/releases)
 
 # 请注意
 1.集成的插件只是自己需要用到的，请多多包涵。  
